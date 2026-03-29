@@ -2,51 +2,30 @@
 #include <iostream>
 using  namespace std;
 
-class Solution {
+class Solution
+{
 public:
     vector<int> twoSum(vector<int>& numbers, int target) {
-        vector<int> result;
-        for (int i = 0; i < numbers.size(); i++)
-        {
-            int otherNumber = target - numbers[i];
-            int otherIndex = BinarySearch(numbers,otherNumber,i+1);
-            if (otherIndex != -1)
-            {
-                                result.push_back(i +1);
-                result.push_back(otherIndex +1);
-
-                return result;
+        int left = 0, right = numbers.size()-1;
+        while (left < right){
+            if (numbers[left] + numbers[right] == target){
+                int result[2] = {left+1,right+1};
+                return vector<int>{result,result+2};
             }
-        }
-        return  {};
-    }
-
-
-    int BinarySearch(vector<int>& numbers, int target,int lefta)
-    {
-
-        int left = lefta, right = numbers.size()-1;
-
-        while (left <= right)
-        {
-            int mid = (left+right)/2;
-            if (numbers[mid] == target)
+            else if (numbers[left] + numbers[right] < target)
             {
-                return mid;
-            }
-            if (numbers[mid] < target)
-            {
-                left = mid + 1;
+                left++;
             }
             else
             {
-                right = mid - 1;
+                right--;
             }
-
         }
-return -1;
+
+        throw invalid_argument("The input has no solution");
     }
 };
+
 
 
 int main()
