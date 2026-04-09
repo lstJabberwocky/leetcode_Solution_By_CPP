@@ -8,7 +8,8 @@ file(GLOB SRC_LIST *.cpp)
 
 foreach(src ${SRC_LIST})
     get_filename_component(name ${src} NAME_WE)
-    add_executable(${name} ${src})
+    add_executable(${name} ${src}
+            209.cpp)
 endforeach()
 
 
