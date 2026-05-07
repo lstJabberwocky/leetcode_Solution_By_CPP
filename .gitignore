@@ -2,7 +2,7 @@
 .vscode/
 cmake-build-debug/
 *.exe
-
+build/
 
 CMakeLists.txt
 dev01_test.txt
