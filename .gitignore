@@ -3,6 +3,7 @@
 cmake-build-debug/
 *.exe
 build/
+output/
 
 CMakeLists.txt
 dev01_test.txt
