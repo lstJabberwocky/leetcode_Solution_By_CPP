@@ -11,6 +11,7 @@ public:
     int boardXSize;
 
 
+
     vector<pair<int,int>> upLeft = {{-1,0},{0,-1}};
     
     int solve(int m,int n){
@@ -24,7 +25,7 @@ public:
         }
 
 
-        if (board[m][n] >= 0){
+        if (board[m][n] > 0){
             return board[m][n];
         }
 
